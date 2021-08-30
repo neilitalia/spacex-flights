@@ -4,11 +4,13 @@ const Flight = new Schema(
   {
     departure: {
       date: { type: Date, required: true },
+      planet: { type: String, required: true },
       port: { type: String, required: true },
       terminal: { type: String, required: true }
     },
     arrival: {
       date: { type: Date, required: true },
+      planet: { type: String, required: true },
       port: { type: String, required: true },
       terminal: { type: String, required: true }
     },

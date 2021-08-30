@@ -1,6 +1,13 @@
 const mongoose = require('mongoose')
+require('dotenv').config()
 
-let MONGODB_URI = 'mongodb://127.0.0.1:27017/spacexDatabase'
+let MONGODB_URI
+
+if (process.env.NODE_ENV === 'production' || process.env.USE_ATLAS === 'true') {
+  MONGODB_URI = process.env.MONGODB_URI
+} else {
+  MONGODB_URI = 'mongodb://127.0.0.1:27017/spacexDatabase'
+}
 
 mongoose
   .connect(MONGODB_URI, { useUnifiedTopology: true, useNewUrlParser: true })
