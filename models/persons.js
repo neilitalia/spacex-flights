@@ -7,4 +7,4 @@ const Person = new Schema(
   },
   { timestamps: true }
 )
-module.exports = Post
+module.exports = Person
