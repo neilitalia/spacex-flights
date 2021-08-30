@@ -1,0 +1,30 @@
+{
+  "name": "spacex-flights",
+  "version": "1.0.0",
+  "description": "An interplanetary flight booking system for SpaceX",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neilitalia/spacex-flights.git"
+  },
+  "author": "Neil Italia",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/neilitalia/spacex-flights/issues"
+  },
+  "homepage": "https://github.com/neilitalia/spacex-flights#readme",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
