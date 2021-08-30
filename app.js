@@ -3,6 +3,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const logger = require('morgan')
 const AppRouter = require('./routes/AppRouter')
+const db = require('./db')
 
 const PORT = process.env.PORT || 3001
 
@@ -14,5 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(logger('dev'))
 
 app.use('/api', AppRouter)
+
+db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.listen(PORT, () => console.log(`Server Running On Port:`, PORT))
