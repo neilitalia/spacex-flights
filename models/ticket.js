@@ -9,4 +9,5 @@ const Ticket = new Schema(
   },
   { timestamps: true }
 )
+
 module.exports = Ticket

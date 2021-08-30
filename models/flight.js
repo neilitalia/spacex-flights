@@ -16,4 +16,4 @@ const Flight = new Schema(
   },
   { timestamps: true }
 )
-module.exports = Post
+module.exports = Flight
