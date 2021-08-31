@@ -1,6 +1,7 @@
 import React from 'react'
 import FlightDetail from './FlightDetail'
 import './EarliestFlight.css'
+import CheckMark from '../icons/CheckMark.jsx'
 
 const EarliestFlight = () => {
   return (
@@ -30,12 +31,12 @@ const EarliestFlight = () => {
         <FlightDetail label="Price" data="$ 2M" textAlign="right"/>
       </div>
       <h3 className="flight-privileges">Flight Privileges</h3>
-      <p className="list-1">Spacewalks</p>
-      <p className="list-2">Cryosleep</p>
-      <p className="list-3">Gigabit Internet</p>
-      <p className="list-4">Luxury Cabins</p>
-      <p className="list-5">Gourmet Dining</p>
-      <p className="list-6">Open Bar</p>
+      <p className="list list-1"><CheckMark />Spacewalks</p>
+      <p className="list list-2">Cryosleep</p>
+      <p className="list list-3">Gigabit Internet</p>
+      <p className="list list-4">Luxury Cabins</p>
+      <p className="list list-5">Gourmet Dining</p>
+      <p className="list list-6">Open Bar</p>
     </div>
   )
 }

@@ -97,6 +97,14 @@ div.detail-6 {
   align-self: flex-end;
 }
 
+p > img {
+  fill: white;
+}
+
+p.list {
+  align-self: flex-end;
+}
+
 p.list-1 {
   grid-area: 5/2/6/4;
 }
