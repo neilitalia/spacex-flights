@@ -1,0 +1,14 @@
+article.FlightDetail > p,
+article.FlightDetail > h3 {
+  margin: 0;
+}
+
+article.FlightDetail > p {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+article.FlightDetail > 3 {
+  font-size: 20px;
+  font-weight: 600;
+}

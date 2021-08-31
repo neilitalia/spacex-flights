@@ -1,0 +1,122 @@
+.EarliestFlight {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(7, 80px);
+}
+
+.EarliestFlight > div.destination {
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  padding: 0 20px;
+  grid-column: 2/8;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.EarliestFlight > div.destination > h2.city {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+p.region,
+p.planet {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 200;
+}
+
+.EarliestFlight > button.book-now {
+  grid-column: 8/10;
+  grid-row: 1/2;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 22px;
+}
+
+div.details-row-1 {
+  grid-area: 2/2/3/10;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+div.details-row-2 {
+  grid-area: 3/2/4/10;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+h3.flight-privileges {
+  grid-row: 4/5;
+  grid-column: 2/4;
+  grid-area: 4/2/5/4;
+  align-self: flex-end;
+  margin: 0;
+}
+
+div.EarliestFlight > p {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+div.detail-1 {
+  grid-area: 2/2/3/4;
+  align-self: flex-end;
+}
+
+div.detail-2 {
+  grid-area: 2/4/3/6;
+  align-self: flex-end;
+}
+
+div.detail-3 {
+  grid-area: 2/6/3/8;
+  align-self: flex-end;
+}
+
+div.detail-4 {
+  grid-area: 3/2/4/4;
+  align-self: flex-end;
+}
+
+div.detail-5 {
+  grid-area: 3/4/4/6;
+  align-self: flex-end;
+}
+
+div.detail-6 {
+  grid-area: 3/6/4/8;
+  align-self: flex-end;
+}
+
+p.list-1 {
+  grid-area: 5/2/6/4;
+}
+
+p.list-2 {
+  grid-area: 6/2/7/4;
+}
+
+p.list-3 {
+  grid-area: 5/4/6/6;
+}
+
+p.list-4 {
+  grid-area: 6/4/7/6;
+}
+
+p.list-5 {
+  grid-area: 5/6/6/8;
+}
+
+p.list-6 {
+  grid-area: 6/6/7/8;
+}
