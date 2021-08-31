@@ -1,0 +1,25 @@
+div.NavBar {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+}
+
+div.NavBar > img {
+  border: 1px solid pink;
+  height: 30px;
+}
+
+div.NavBar > nav > ul {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: row;
+}
+
+div.NavBar > nav > ul > li {
+  border: 1px solid blue;
+  list-style: none;
+  text-transform: uppercase;
+}
