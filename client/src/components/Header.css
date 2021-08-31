@@ -1,12 +1,10 @@
-header.Header {
+.Header {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: 20vh 100px 100px 200vh;
-  background: url('https://cdn.pixabay.com/photo/2016/01/19/17/29/earth-1149733_960_720.jpg');
-  background-size: contain;
+  grid-template-rows: 20vh 100px 100px 100px 70px 20vh;
 }
 
-header.Header > h1 {
+.Header > h1 {
   margin: 0;
   font-size: 64px;
   font-weight: 600;
@@ -14,9 +12,29 @@ header.Header > h1 {
   grid-row: 2/3;
 }
 
-header.Header > p {
+.Header > p {
   margin: 0;
   font-size: 24px;
   grid-column: 2 / 10;
   grid-row: 3/4;
+}
+
+.Header > button {
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.Header > button.earliest-flight {
+  grid-column: 2/5;
+  grid-row: 5/6;
+}
+
+.Header > button.all-flights {
+  grid-column: 6/9;
+  grid-row: 5/6;
 }

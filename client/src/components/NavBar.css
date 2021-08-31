@@ -1,5 +1,4 @@
 nav.NavBar {
-  z-index: 2;
   position: sticky;
   top: 0;
   background: linear-gradient(
