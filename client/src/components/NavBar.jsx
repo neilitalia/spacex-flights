@@ -3,17 +3,15 @@ import './NavBar.css'
 
 const NavBar = () => {
   return (
-    <div class="NavBar">
+    <nav className="NavBar">
       <img src="/SpaceX-Logo.png" alt="Logo" />
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Flights</li>
-          <li>Tickets</li>
-        </ul>
-      </nav>
-    </div>
+      <ul>
+        <li><a>Home</a></li>
+        <li><a>About</a></li>
+        <li><a>Flights</a></li>
+        <li><a>Tickets</a></li>
+      </ul>
+    </nav>
   )
 }
 

@@ -1,32 +1,34 @@
-div.NavBar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 10%;
+nav.NavBar {
+  z-index: 2;
+  position: sticky;
+  top: 0;
   background: linear-gradient(
     180deg,
     #0e1214 40.06%,
     rgba(14, 18, 20, 0) 83.43%
   );
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: 100px;
 }
 
-div.NavBar > img {
+nav.NavBar > img {
   height: 30px;
+  grid-column: 2 /4;
+  align-self: center;
 }
 
-div.NavBar > nav {
-  min-width: 40%;
-}
-
-div.NavBar > nav > ul {
+nav.NavBar > ul {
   padding-left: 0;
+  min-width: 40%;
+  grid-column: 7/ 11;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-self: center;
 }
 
-div.NavBar > nav > ul > li {
+nav.NavBar > ul > li {
   list-style: none;
   text-transform: uppercase;
 }

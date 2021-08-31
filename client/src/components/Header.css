@@ -1,7 +1,9 @@
 header.Header {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 20vh 100px 100px 200vh;
+  background: url('https://cdn.pixabay.com/photo/2016/01/19/17/29/earth-1149733_960_720.jpg');
+  background-size: contain;
 }
 
 header.Header > h1 {
@@ -9,12 +11,12 @@ header.Header > h1 {
   font-size: 64px;
   font-weight: 600;
   grid-column: 2 / 10;
-  grid-row: 1/2;
+  grid-row: 2/3;
 }
 
 header.Header > p {
   margin: 0;
   font-size: 24px;
   grid-column: 2 / 10;
-  grid-row: 2/3;
+  grid-row: 3/4;
 }
