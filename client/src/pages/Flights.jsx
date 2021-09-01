@@ -81,9 +81,11 @@ const Flights = () => {
       </select>
       <div className="flight-details">
       {
-        searched && (flights.map((flight)=>(
-          <FlightDetailsCard {...flight} key={flight._id}/>
-        )))
+        searched && flights.length === 0
+          ? (<h1>Sorry, No Flights Found</h1>)
+          : (flights.map((flight)=>(
+              <FlightDetailsCard {...flight} key={flight._id}/>
+          )))
       }
       </div>
     </div>

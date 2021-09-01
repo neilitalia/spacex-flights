@@ -29,7 +29,8 @@ const FlightDetailsCard = (props) => {
       <FlightDetail label="Launchpad" data={`${props.departure.port}, ${props.departure.planet}`} textAlign="left"/>
       <FlightDetail label="Ride" data={props.vehicle} textAlign="center"/>
       <FlightDetail label="Landing" data={`${props.arrival.port}, ${props.arrival.planet}`} textAlign="right"/>
-      <FlightDetail label="Price" data="..." textAlign="left" />
+      <div></div>
+      <FlightDetail label="Price" data="..." textAlign="center" />
       <button className="book-now">Book This Flight</button> 
     </div>
   )
