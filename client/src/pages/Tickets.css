@@ -1,0 +1,13 @@
+.Tickets {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(9, 80px);
+}
+
+.Tickets > h1 {
+  margin: 0;
+  font-size: 64px;
+  font-weight: 600;
+  grid-area: 2 / 2 / 3 / 8;
+}

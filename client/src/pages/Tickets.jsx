@@ -1,9 +1,15 @@
 import React from 'react'
+import './Tickets.css'
 
 const Tickets = () => {
+
+  const getAllTickets = async () => {
+    
+  }
+
   return (
     <div className='Tickets'>
-      <h1>Tickets Tickets</h1>
+      <h1>Your tickets</h1>
     </div>
   )
 }
