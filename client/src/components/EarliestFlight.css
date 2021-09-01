@@ -3,6 +3,7 @@
   grid-gap: 20px;
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: repeat(7, 80px);
+  overflow: hidden;
 }
 
 .EarliestFlight > div.destination {
@@ -97,34 +98,58 @@ div.detail-6 {
   align-self: flex-end;
 }
 
-p > img {
-  fill: white;
+div.list {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-p.list {
-  align-self: flex-end;
+div.list > p {
+  margin-left: 10px;
 }
 
-p.list-1 {
+div.list-1 {
   grid-area: 5/2/6/4;
 }
 
-p.list-2 {
+div.list-2 {
   grid-area: 6/2/7/4;
 }
 
-p.list-3 {
+div.list-3 {
   grid-area: 5/4/6/6;
 }
 
-p.list-4 {
+div.list-4 {
   grid-area: 6/4/7/6;
 }
 
-p.list-5 {
+div.list-5 {
   grid-area: 5/6/6/8;
 }
 
-p.list-6 {
+div.list-6 {
   grid-area: 6/6/7/8;
+}
+
+img.planet-image {
+  opacity: 0.7;
+  z-index: -1;
+  grid-column: 8/12;
+  grid-row: 4/8;
+  height: 600px;
+  animation-name: spin;
+  animation-duration: 50000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -33,4 +33,55 @@ const deleteFlight = async (req, res) => {
   }
 }
 
-module.exports = { getHealth, getAll, addFlight, deleteFlight }
+const findByOrigin = async (req, res) => {
+  try {
+    const origin = req.body.origin
+    const results = await Flight.find({
+      'departure.planet': { $regex: new RegExp(origin, 'i') }
+    })
+    if (!results) throw new Error('No flights found')
+    return res.status(200).json({ results })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+const findByDestination = async (req, res) => {
+  try {
+    const destination = req.body.destination
+    const results = await Flight.find({
+      'arrival.planet': { $regex: new RegExp(destination, 'i') }
+    })
+    if (!results) throw new Error('No flights found')
+    return res.status(200).json({ results })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+const findByOriginAndDestination = async (req, res) => {
+  try {
+    const origin = req.body.origin
+    const destination = req.body.destination
+    const results = await Flight.find({
+      $and: [
+        { 'departure.planet': { $regex: new RegExp(origin, 'i') } },
+        { 'arrival.planet': { $regex: new RegExp(destination, 'i') } }
+      ]
+    })
+    if (!results) throw new Error('No flights found')
+    return res.status(200).json({ results })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+module.exports = {
+  getHealth,
+  getAll,
+  addFlight,
+  deleteFlight,
+  findByOrigin,
+  findByDestination,
+  findByOriginAndDestination
+}

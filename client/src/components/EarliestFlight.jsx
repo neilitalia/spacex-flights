@@ -31,12 +31,31 @@ const EarliestFlight = () => {
         <FlightDetail label="Price" data="$ 2M" textAlign="right"/>
       </div>
       <h3 className="flight-privileges">Flight Privileges</h3>
-      <p className="list list-1"><CheckMark />Spacewalks</p>
-      <p className="list list-2">Cryosleep</p>
-      <p className="list list-3">Gigabit Internet</p>
-      <p className="list list-4">Luxury Cabins</p>
-      <p className="list list-5">Gourmet Dining</p>
-      <p className="list list-6">Open Bar</p>
+      <div className="list list-1">
+        <CheckMark />
+        <p>Spacewalks</p>
+      </div>
+      <div className="list list-2">
+        <CheckMark />
+        <p>Cryosleep</p>
+      </div>
+      <div className="list list-3">
+        <CheckMark />
+        <p>Gigabit Internet</p>
+      </div>
+      <div className="list list-4">
+        <CheckMark />
+        <p>Luxury Cabins</p>
+      </div>
+      <div className="list list-5">
+        <CheckMark />
+        <p>Gourmet Dining</p>
+      </div>
+      <div className="list list-6">
+        <CheckMark />
+        <p>Open Bar</p>
+      </div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Mars_%2816716283421%29_-_Transparent_background.png" alt="Mars Image" className="planet-image"/>
     </div>
   )
 }
