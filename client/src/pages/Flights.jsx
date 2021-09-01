@@ -4,6 +4,7 @@ import './Flights.css'
 import Search from '../icons/Search'
 import { API_BASE_URI } from '../globals'
 import FlightDetail from '../components/FlightDetail'
+import FlightDetailsCard from '../components/FlightDetailsCard'
 
 const Flights = () => {
   const [origin, setOrigin] = useState('')
@@ -14,11 +15,13 @@ const Flights = () => {
   const findFlightByOrigin = async () => {
     const flights = await axios.post(`${API_BASE_URI}/flights/findByOrigin`,{ origin: origin })
     setFlights(flights.data.results)
+    toggleSearched(true)
   }
 
   const findFlightByDestination = async () => {
     const flights = await axios.post(`${API_BASE_URI}/flights/findByDestination`,{ destination: destination })
     setFlights(flights.data.results)
+    toggleSearched(true)
   }
 
   const findFlightByOriginAndDestination = async () => {
@@ -27,6 +30,7 @@ const Flights = () => {
       destination: destination
     })
     setFlights(flights.data.results)
+    toggleSearched(true)
   }
 
   const handleSearch = () => {
@@ -38,7 +42,6 @@ const Flights = () => {
     } else if (origin && destination) {
       findFlightByOriginAndDestination()
     }
-    toggleSearched(true)
   }
 
   return (
@@ -76,28 +79,13 @@ const Flights = () => {
         <option value="one-person">1 Person</option>
         <option value="two-persons">2 Persons</option>
       </select>
-      <div className="detail-1">
-        <FlightDetail label="Departure" data='...' textAlign="left" className="flight-test"/>
+      <div className="flight-details">
+      {
+        searched && (flights.map((flight)=>(
+          <FlightDetailsCard {...flight} key={flight._id}/>
+        )))
+      }
       </div>
-      <div className="detail-2">
-        <FlightDetail label="Duration" data="..." textAlign="center"/>
-      </div>
-      <div className="detail-3">
-        <FlightDetail label="Arrival" data="..." textAlign="right"/>
-      </div>
-      <div className="detail-4">
-        <FlightDetail label="Launchpad" data="..." textAlign="left"/>
-      </div>
-      <div className="detail-5">
-        <FlightDetail label="Ride" data="..." textAlign="center"/>
-      </div>
-      <div className="detail-6">
-        <FlightDetail label="Landing" data="..." textAlign="center"/>
-      </div>
-      <div className="detail-7">
-        <FlightDetail label="Price" data="..." textAlign="right" />
-      </div>
-      <button className="book-now">Book Now</button>
     </div>
   )
 }

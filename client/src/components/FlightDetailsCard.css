@@ -1,0 +1,9 @@
+div.FlightDetailsCard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+div.FlightDetailsCard > * {
+  flex: 0 1 33.333%;
+}
