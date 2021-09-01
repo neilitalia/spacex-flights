@@ -8,7 +8,7 @@ import FlightDetailsCard from '../components/FlightDetailsCard'
 const Flights = () => {
   const [origin, setOrigin] = useState('')
   const [destination, setDestination] = useState('')
-  const [flights, setFlights] = useState()
+  const [flights, setFlights] = useState(null)
   const [searched, toggleSearched] = useState(false)
 
   const findFlightByOrigin = async () => {
@@ -80,11 +80,11 @@ const Flights = () => {
       </select>
       <div className="flight-details">
       {
-        searched && flights.length === 0
-          ? (<h1>Sorry, No Flights Found</h1>)
-          : (flights.map((flight)=>(
+        searched
+          ? (flights.map((flight)=>(
               <FlightDetailsCard {...flight} key={flight._id}/>
           )))
+          : (<h3>Enter origin or destination</h3>)
       }
       </div>
     </div>

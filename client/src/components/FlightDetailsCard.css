@@ -1,6 +1,9 @@
 div.FlightDetailsCard {
+  padding: 30px;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
   margin: 80px 0;
-  height: 220px;
+  height: 250px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -8,6 +11,10 @@ div.FlightDetailsCard {
 
 div.FlightDetailsCard > * {
   flex: 0 1 33.333%;
+}
+
+div.FlightDetailsCard > svg {
+  align-self: flex-end;
 }
 
 button.book-now {

@@ -1,4 +1,5 @@
 import React from 'react'
+import Barcode from 'react-barcode'
 import './FlightDetailsCard.css'
 import FlightDetail from './FlightDetail'
 
@@ -29,7 +30,8 @@ const FlightDetailsCard = (props) => {
       <FlightDetail label="Launchpad" data={`${props.departure.port}, ${props.departure.planet}`} textAlign="left"/>
       <FlightDetail label="Ride" data={props.vehicle} textAlign="center"/>
       <FlightDetail label="Landing" data={`${props.arrival.port}, ${props.arrival.planet}`} textAlign="right"/>
-      <div></div>
+      {/* <Barcode value={props._id} displayValue='false' background='#0e1114' lineColor='#ffffff' height='40' width='1'/> */}
+      <FlightDetail label="Terminal" data={props.departure.terminal}/>
       <FlightDetail label="Price" data="..." textAlign="center" />
       <button className="book-now">Book This Flight</button> 
     </div>
