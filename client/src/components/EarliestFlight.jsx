@@ -13,13 +13,13 @@ const EarliestFlight = () => {
       </div>
       <button className="book-now">Book Now</button>
       <div className="detail-1">
-        <FlightDetail label="Departure" data="Sept 8, 2021" textAlign="left"/>
+        <FlightDetail label="Departure" data="Sept 5, 2021" textAlign="left"/>
       </div>
       <div className="detail-2">
         <FlightDetail label="Duration" data="9 months" textAlign="center"/>
       </div>
       <div className="detail-3">
-        <FlightDetail label="Arrival" data="June 8, 2022"  textAlign="right"/>
+        <FlightDetail label="Arrival" data="June 5, 2022"  textAlign="right"/>
       </div>
       <div className="detail-4">
         <FlightDetail label="Launchpad" data="Houston" textAlign="left"/>

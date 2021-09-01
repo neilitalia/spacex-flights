@@ -2,7 +2,7 @@
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: repeat(7, 80px);
+  grid-template-rows: repeat(9, 80px);
 }
 
 .Flights > h1 {
@@ -56,4 +56,75 @@ button.search-button {
 
 button.search-button > svg {
   margin-right: 10px;
+}
+
+select.dropdown {
+  font-size: 22px;
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border: none;
+  border-bottom: 3px solid #ffffff;
+}
+
+select.dropdown > option {
+  border: none;
+  background: #0e1114;
+}
+
+select.dropdown:focus {
+  outline: none;
+}
+
+select.flight-trips {
+  grid-area: 4/2/5/4;
+}
+
+select.flight-class {
+  grid-area: 4/5/5/7;
+}
+
+select.flight-persons {
+  grid-area: 4/8/5/10;
+}
+
+.flight-test {
+  color: red;
+}
+
+div.detail-1 {
+  grid-area: 5/2/6/4;
+}
+
+div.detail-2 {
+  grid-area: 5/5/6/7;
+}
+
+div.detail-3 {
+  grid-area: 5/8/6/10;
+}
+
+div.detail-4 {
+  grid-area: 6/2/7/4;
+}
+
+div.detail-5 {
+  grid-area: 6/4/7/6;
+}
+
+div.detail-6 {
+  grid-area: 6/6/7/8;
+}
+
+div.detail-7 {
+  grid-area: 6/8/7/10;
+}
+
+button.book-now {
+  grid-area: 7/8/8/10;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 22px;
 }
