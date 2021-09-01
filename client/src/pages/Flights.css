@@ -53,3 +53,7 @@ button.search-button {
   align-items: center;
   justify-content: center;
 }
+
+button.search-button > svg {
+  margin-right: 10px;
+}
