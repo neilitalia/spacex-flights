@@ -11,3 +11,7 @@
   font-weight: 600;
   grid-area: 2 / 2 / 3 / 8;
 }
+
+div.tickets-container {
+  grid-area: 3/2 / auto/10;
+}

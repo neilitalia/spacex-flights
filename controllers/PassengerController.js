@@ -29,4 +29,20 @@ const deletePassenger = async (req, res) => {
   }
 }
 
-module.exports = { getAll, addPassenger, deletePassenger }
+const findById = async (req, res) => {
+  try {
+    const id = req.body.id
+    const passenger = await Passenger.findById(id)
+    if (passenger) {
+      return res.status(200).json({ passenger })
+    } else {
+      return res
+        .status(404)
+        .send('Passenger with the specified ID does not exists')
+    }
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+module.exports = { getAll, addPassenger, deletePassenger, findById }
