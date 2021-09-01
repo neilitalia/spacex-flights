@@ -32,3 +32,12 @@ nav.NavBar > ul > li {
   list-style: none;
   text-transform: uppercase;
 }
+
+nav > ul > li > a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+nav > ul > li > a:hover {
+  border-bottom: 3px solid white;
+}
