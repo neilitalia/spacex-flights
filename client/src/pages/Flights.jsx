@@ -3,7 +3,6 @@ import axios from 'axios'
 import './Flights.css'
 import Search from '../icons/Search'
 import { API_BASE_URI } from '../globals'
-import FlightDetail from '../components/FlightDetail'
 import FlightDetailsCard from '../components/FlightDetailsCard'
 
 const Flights = () => {
