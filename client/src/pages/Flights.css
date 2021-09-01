@@ -29,7 +29,6 @@
 
 .Flights > input:focus {
   outline: none;
-  border: 7px solid #ffffff;
 }
 
 .input-origin {
@@ -52,6 +51,7 @@ button.search-button {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  letter-spacing: 3px;
 }
 
 button.search-button > svg {
