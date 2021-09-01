@@ -1,0 +1,55 @@
+.Flights {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(7, 80px);
+}
+
+.Flights > h1 {
+  margin: 0;
+  font-size: 64px;
+  font-weight: 600;
+  grid-area: 2 / 2 / 3 / 8;
+}
+
+.Flights > input {
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  padding-left: 20px;
+  font-size: 36px;
+  user-select: none;
+  transition: all 0.5s ease;
+}
+
+.Flights > input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.Flights > input:focus {
+  outline: none;
+  border: 7px solid #ffffff;
+}
+
+.input-origin {
+  grid-area: 3/ 2 /4/5;
+}
+
+.input-destination {
+  grid-area: 3/5/4/8;
+}
+
+button.search-button {
+  grid-area: 3/8/4/10;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0);
+  border: 3px solid white;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
