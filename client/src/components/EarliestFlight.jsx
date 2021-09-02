@@ -27,7 +27,7 @@ const EarliestFlight = (props) => {
         <FlightDetail label="Ride" data="FALCON HEAVY" textAlign="center"/>
       </div>
       <div className="detail-6">
-        <FlightDetail label="Price" data="$ 2M" textAlign="right"/>
+        <FlightDetail label="Price" data="$ 2.4M" textAlign="right"/>
       </div>
       <h3 className="flight-privileges">Flight Privileges</h3>
       <div className="list list-1">
