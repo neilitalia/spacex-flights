@@ -19,28 +19,33 @@ const FlightDetailsCard = (props) => {
       (date1.getTime() - date2.getTime()) / 1000 / (60 * 60 * 24 * 7 * 4)
     return Math.abs(Math.round(rawDuration))
   }
-  const bookFlight = async () => {
-    const payload = {
-      "class": "first",
-      "segment": "3",
-      "price": 6900000,
-      "flight": props._id,
-      "passenger": "612ecaa27f4f4e837f4ae17a"
-    }
-    await axios.post(`${API_BASE_URI}/tickets/add`, payload)
-  }
-  
+
   const calculatePrice = (duration) =>{
     let price = 2000000
-    if (props.flightClass === 'first-class') {
+    if (props.flightClass === 'first') {
       price = duration * 500000
-    } else if (props.flightClass === 'business-class'){
+    } else if (props.flightClass === 'business'){
       price = duration * 400000
-    } else if (props.flightClass === 'economy-class'){
+    } else if (props.flightClass === 'economy'){
       price = duration * 300000
     }
     return price
   }
+  
+  const bookFlight = async () => {
+    const price = calculatePrice(duration)
+    const segment = Math.floor(Math.random()*10)
+    const payload = {
+      "class": props.flightClass,
+      "segment": segment,
+      "price": price,
+      "flight": props._id,
+      "passenger": "612ecaa27f4f4e837f4ae17a"
+    }
+    console.log('payload :>> ', payload);
+    await axios.post(`${API_BASE_URI}/tickets/add`, payload)
+  }
+  
 
   const formatPrice = (duration) => {
     const price = calculatePrice(duration) / 1000000

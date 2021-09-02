@@ -8,12 +8,11 @@ const Tickets = () => {
 
   const [tickets, setTickets] = useState(null)
 
-  const getAllTickets = async () => {
-    const allTickets = await axios.get(`${API_BASE_URI}/tickets/all`)
-    setTickets(allTickets.data.results)
-  }
-
   useEffect(() => {
+    const getAllTickets = async () => {
+      const allTickets = await axios.get(`${API_BASE_URI}/tickets/all`)
+      setTickets(allTickets.data.results)
+    }
     getAllTickets()
   }, [])
 
@@ -22,11 +21,11 @@ const Tickets = () => {
       <h1>Your tickets</h1>
       <div className="tickets-container">
         {
-          tickets
+          tickets && tickets.length > 0
             ? tickets.map((ticket) => (
               <Ticket {...ticket} key={ticket._id}/>
             ))
-            : (<h3>No tickets yet.</h3>)
+            : (<h2>No tickets yet.</h2>)
         }
       </div>
     </div>

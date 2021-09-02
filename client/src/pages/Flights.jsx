@@ -79,9 +79,9 @@ const Flights = () => {
         <option value="round-trip">Round Trip</option>
       </select>
       <select name="flight-class" className="dropdown flight-class" onChange={(e)=>setFlightClass(e.target.value)}>
-        <option value="first-class">First Class</option>
-        <option value="business-class">Business</option>
-        <option value="economy-class">Economy</option>
+        <option value="first">First Class</option>
+        <option value="business">Business</option>
+        <option value="economy">Economy</option>
       </select>
       <select name="flight-persons" className="dropdown flight-persons">
         <option value="one-person">1 Person</option>
@@ -93,7 +93,7 @@ const Flights = () => {
           ? (flights.map((flight)=>(
               <FlightDetailsCard {...flight} key={flight._id} flightWays={flightWays} flightClass={flightClass}/>
           )))
-          : (<h3>Enter origin or destination</h3>)
+          : (<h2>Enter origin or destination</h2>)
       }
       </div>
     </div>

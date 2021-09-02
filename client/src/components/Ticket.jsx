@@ -1,11 +1,14 @@
 import axios from 'axios'
 import React, {useState, useEffect} from 'react'
 import { API_BASE_URI } from '../globals'
+import Confirmation from './Confirmation'
 import './Ticket.css'
 
 const Ticket = (props) => {
   const [passenger, setPassenger] = useState('')
   const [flight, setFlight] = useState('')
+  const [cancelAttempt, setCancelAttempt] = useState(false)
+  const [confirmCancel, setConfirmCancel] = useState(false)
 
   const convertDateToString = (date) => {
     const D = new Date(date)
@@ -23,21 +26,30 @@ const Ticket = (props) => {
     console.log(result)
   }
 
-  useEffect(() => {
+  const handleCancellation = () => {
+    cancelAttempt
+      ? setCancelAttempt(false)
+      : setCancelAttempt(true)
+  }
 
+  useEffect(() => {
     const getPassenger = async () => {
       const result = await axios.get(`${API_BASE_URI}/passengers/findById/${props.passenger}`)
       setPassenger(result.data.passenger)
     }
-
     const getFlight = async () => {
       const result = await axios.get(`${API_BASE_URI}/flights/findById/${props.flight}`)
       setFlight(result.data.flight)
     }
-
     getPassenger()
     getFlight()
   }, [props.passenger, props.flight])
+
+  useEffect(() => {
+    if(cancelAttempt && confirmCancel){
+      cancelFlight()
+    }
+  }, [cancelAttempt, confirmCancel])
 
   return (
     <div>
@@ -76,7 +88,14 @@ const Ticket = (props) => {
       <div className="ticket-footer">
         <h4 className='ticket-footer-button'>Send to phone</h4>
         <h4>Flight {props.flight}</h4>
-        <h4 onClick={cancelFlight} className='ticket-footer-button'>Cancel flight</h4>
+        <h4 onClick={handleCancellation} className='ticket-footer-button'>Cancel flight</h4>
+      </div>
+      <div className="cancel-confirmation">
+        {
+          cancelAttempt
+          ? <Confirmation setCancelAttempt={setCancelAttempt} setConfirmCancel={setConfirmCancel}/>
+          : <div></div>
+        }
       </div>
     </div>
   )
