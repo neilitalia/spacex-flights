@@ -74,9 +74,9 @@ const Ticket = (props) => {
         }
       </article>
       <div className="ticket-footer">
-        <h4>Send to phone</h4>
+        <h4 className='ticket-footer-button'>Send to phone</h4>
         <h4>Flight {props.flight}</h4>
-        <h4 onClick={cancelFlight}>Cancel flight</h4>
+        <h4 onClick={cancelFlight} className='ticket-footer-button'>Cancel flight</h4>
       </div>
     </div>
   )

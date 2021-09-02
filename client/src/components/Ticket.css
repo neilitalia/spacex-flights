@@ -83,3 +83,12 @@ div.ticket-footer > h4 {
   margin-top: 10px;
   font-weight: 200;
 }
+
+.ticket-footer-button {
+  border: none;
+  cursor: pointer;
+}
+
+.ticket-footer-button:hover {
+  border-bottom: 3px solid #ffffff;
+}

@@ -10,12 +10,21 @@
   margin: 0;
   font-size: 64px;
   font-weight: 600;
-  grid-area: 2 / 2 / 3 / 8;
+  grid-area: 2 / 2 / 3 / 10;
 }
 
-.Flights > input {
+.Flights > form {
+  width: 100%;
+  grid-area: 3/2/4/10;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Flights > form > input {
   border: 3px solid #ffffff;
   border-radius: 10px;
+  width: calc(35% - 10px);
   background: rgba(0, 0, 0, 0);
   color: #ffffff;
   padding-left: 20px;
@@ -24,24 +33,16 @@
   transition: all 0.5s ease;
 }
 
-.Flights > input::placeholder {
+.Flights > form > input::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.Flights > input:focus {
+.Flights > form > input:focus {
   outline: none;
 }
 
-.input-origin {
-  grid-area: 3/2/4/5;
-}
-
-.input-destination {
-  grid-area: 3/5/4/8;
-}
-
 button.search-button {
-  grid-area: 3/8/4/10;
+  width: calc(25% - 15px);
   color: #ffffff;
   background: rgba(0, 0, 0, 0);
   border: 3px solid white;
@@ -98,10 +99,6 @@ select.flight-class {
 
 select.flight-persons {
   grid-area: 4/8/5/10;
-}
-
-.flight-test {
-  color: red;
 }
 
 div.flight-details {

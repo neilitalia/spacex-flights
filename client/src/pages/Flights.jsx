@@ -45,28 +45,35 @@ const Flights = () => {
     }
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    handleSearch()
+  }
+
   return (
     <div className="Flights">
       <h1>Search for flights</h1>
-      <input
-        type="text"
-        className="input-origin"
-        placeholder="Where from?"
-        onChange={(e)=>setOrigin(e.target.value)}
-      />
-      <input
-        type="text"
-        className="input-destination"
-        placeholder="Where to?"
-        onChange={(e)=>setDestination(e.target.value)}
-      />
-      <button
-        className="search-button"
-        onClick={handleSearch}
-      >
-          <Search />
-          Search
-      </button>
+      <form onSubmit={(e)=>handleSubmit(e)}>
+        <input
+          type="text"
+          className="input-origin"
+          placeholder="Where from?"
+          onChange={(e)=>setOrigin(e.target.value)}
+        />
+        <input
+          type="text"
+          className="input-destination"
+          placeholder="Where to?"
+          onChange={(e)=>setDestination(e.target.value)}
+        />
+        <button
+          className="search-button"
+          onClick={handleSearch}
+        >
+            <Search />
+            Search
+        </button>
+      </form>
       <select name="flight-trips" className="dropdown flight-trips" onChange={(e)=>setFlightWays(e.target.value)}>
         <option value="one-way">One Way</option>
         <option value="round-trip">Round Trip</option>
