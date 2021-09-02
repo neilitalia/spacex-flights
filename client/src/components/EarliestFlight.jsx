@@ -55,7 +55,9 @@ const EarliestFlight = () => {
         <CheckMark />
         <p>Open Bar</p>
       </div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Mars_%2816716283421%29_-_Transparent_background.png" alt="Mars Animated" className="planet-image"/>
+      <div className="planet-image-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Mars_%2816716283421%29_-_Transparent_background.png" alt="Mars Animated" className="planet-image"/>
+      </div>
     </div>
   )
 }

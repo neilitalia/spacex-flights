@@ -6,6 +6,26 @@
   flex-direction: row;
 }
 
+.Ticket > div.qr-code {
+  min-width: 200px;
+  height: 200px;
+  background: linear-gradient(320deg, #22252d, #5f6474);
+  background-size: 400% 400%;
+  animation: loading 1s ease infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 15% 0%;
+  }
+  50% {
+    background-position: 86% 100%;
+  }
+  100% {
+    background-position: 15% 0%;
+  }
+}
+
 .Ticket > div.ticket-details-container {
   padding-left: 30px;
   width: 100%;
@@ -49,4 +69,17 @@ p.margin-0 {
 
 .text-align-right {
   text-align: right;
+}
+
+div.ticket-footer {
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  width: 100%;
+  justify-content: space-between;
+}
+
+div.ticket-footer > h4 {
+  margin-top: 10px;
+  font-weight: 200;
 }

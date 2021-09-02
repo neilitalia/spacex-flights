@@ -133,11 +133,14 @@ div.list-6 {
   grid-area: 6/6/7/8;
 }
 
-img.planet-image {
-  opacity: 0.7;
+div.planet-image-container {
   z-index: -1;
   grid-column: 8/12;
   grid-row: 4/8;
+}
+
+img.planet-image {
+  opacity: 0.7;
   height: 600px;
   animation-name: spin;
   animation-duration: 50000ms;

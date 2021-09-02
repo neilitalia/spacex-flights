@@ -1,7 +1,8 @@
 import React from 'react'
+import axios from 'axios'
 import './FlightDetailsCard.css'
 import FlightDetail from './FlightDetail'
-// import { convertDateToString, getDuration } from '../globals'
+import { API_BASE_URI } from '../globals'
 
 const FlightDetailsCard = (props) => {
 
@@ -19,6 +20,17 @@ const FlightDetailsCard = (props) => {
     return `${Math.abs(Math.round(rawDuration))} months`
   }
 
+  const bookFlight = async () => {
+    const payload = {
+      "class": "first",
+      "segment": "3",
+      "price": 6900000,
+      "flight": props._id,
+      "passenger": "612ecaa27f4f4e837f4ae17a"
+    }
+    await axios.post(`${API_BASE_URI}/tickets/add`, payload)
+  }
+
   const departureDate = convertDateToString(props.departure.date)
   const arrivalDate = convertDateToString(props.arrival.date)
   const duration = getDuration(props.arrival.date, props.departure.date)
@@ -33,7 +45,7 @@ const FlightDetailsCard = (props) => {
       <FlightDetail label="Landing" data={`${props.arrival.port}, ${props.arrival.planet}`} textAlign="right"/>
       <FlightDetail label="Terminal" data={props.departure.terminal}/>
       <FlightDetail label="Price" data="..." textAlign="center" />
-      <button className="book-now">Book This Flight</button> 
+      <button className="book-now" onClick={bookFlight}>Book This Flight</button> 
     </div>
   )
 }
