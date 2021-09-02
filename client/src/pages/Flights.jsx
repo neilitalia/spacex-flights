@@ -9,6 +9,8 @@ const Flights = () => {
   const [origin, setOrigin] = useState('')
   const [destination, setDestination] = useState('')
   const [flights, setFlights] = useState(null)
+  const [flightWays, setFlightWays] = useState('one-way')
+  const [flightClass, setFlightClass] = useState('first-class')
   const [searched, toggleSearched] = useState(false)
 
   const findFlightByOrigin = async () => {
@@ -65,11 +67,11 @@ const Flights = () => {
           <Search />
           Search
       </button>
-      <select name="flight-trips" className="dropdown flight-trips">
+      <select name="flight-trips" className="dropdown flight-trips" onChange={(e)=>setFlightWays(e.target.value)}>
         <option value="one-way">One Way</option>
-        <option value="rount-trip">Round Trip</option>
+        <option value="round-trip">Round Trip</option>
       </select>
-      <select name="flight-class" className="dropdown flight-class">
+      <select name="flight-class" className="dropdown flight-class" onChange={(e)=>setFlightClass(e.target.value)}>
         <option value="first-class">First Class</option>
         <option value="business-class">Business</option>
         <option value="economy-class">Economy</option>
@@ -82,7 +84,7 @@ const Flights = () => {
       {
         searched
           ? (flights.map((flight)=>(
-              <FlightDetailsCard {...flight} key={flight._id}/>
+              <FlightDetailsCard {...flight} key={flight._id} flightWays={flightWays} flightClass={flightClass}/>
           )))
           : (<h3>Enter origin or destination</h3>)
       }
