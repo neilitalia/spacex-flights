@@ -5,6 +5,6 @@ const PassengerRouter = Router()
 PassengerRouter.get('/all', PassengerController.getAll)
 PassengerRouter.post('/add', PassengerController.addPassenger)
 PassengerRouter.delete('/delete', PassengerController.deletePassenger)
-PassengerRouter.get('/findById', PassengerController.findById)
+PassengerRouter.get('/findById/:id', PassengerController.findById)
 
 module.exports = PassengerRouter

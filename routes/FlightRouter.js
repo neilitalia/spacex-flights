@@ -12,5 +12,6 @@ FlightRouter.get(
   '/findByOriginAndDestination',
   FlightController.findByOriginAndDestination
 )
+FlightRouter.get('/findById/:id', FlightController.findById)
 
 module.exports = FlightRouter

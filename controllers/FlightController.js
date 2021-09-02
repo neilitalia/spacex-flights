@@ -76,6 +76,22 @@ const findByOriginAndDestination = async (req, res) => {
   }
 }
 
+const findById = async (req, res) => {
+  try {
+    const id = req.params.id
+    const flight = await Flight.findById(id)
+    if (flight) {
+      return res.status(200).json({ flight })
+    } else {
+      return res
+        .status(404)
+        .send('Flight with the specified ID does not exists')
+    }
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
 module.exports = {
   getHealth,
   getAll,
@@ -83,5 +99,6 @@ module.exports = {
   deleteFlight,
   findByOrigin,
   findByDestination,
-  findByOriginAndDestination
+  findByOriginAndDestination,
+  findById
 }

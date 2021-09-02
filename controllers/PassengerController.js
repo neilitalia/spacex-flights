@@ -31,7 +31,7 @@ const deletePassenger = async (req, res) => {
 
 const findById = async (req, res) => {
   try {
-    const id = req.body.id
+    const id = req.params.id
     const passenger = await Passenger.findById(id)
     if (passenger) {
       return res.status(200).json({ passenger })

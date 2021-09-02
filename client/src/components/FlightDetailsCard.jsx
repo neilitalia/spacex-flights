@@ -1,7 +1,7 @@
 import React from 'react'
-import Barcode from 'react-barcode'
 import './FlightDetailsCard.css'
 import FlightDetail from './FlightDetail'
+// import { convertDateToString, getDuration } from '../globals'
 
 const FlightDetailsCard = (props) => {
 
@@ -14,10 +14,11 @@ const FlightDetailsCard = (props) => {
   const getDuration = (firstDate, seconDate) => {
     const date1 = new Date(firstDate)
     const date2 = new Date(seconDate)
-    const rawDuration = (date1.getTime() - date2.getTime()) / 1000 / (60*60*24*7*4)
+    const rawDuration =
+      (date1.getTime() - date2.getTime()) / 1000 / (60 * 60 * 24 * 7 * 4)
     return `${Math.abs(Math.round(rawDuration))} months`
   }
-  
+
   const departureDate = convertDateToString(props.departure.date)
   const arrivalDate = convertDateToString(props.arrival.date)
   const duration = getDuration(props.arrival.date, props.departure.date)
@@ -30,7 +31,6 @@ const FlightDetailsCard = (props) => {
       <FlightDetail label="Launchpad" data={`${props.departure.port}, ${props.departure.planet}`} textAlign="left"/>
       <FlightDetail label="Ride" data={props.vehicle} textAlign="center"/>
       <FlightDetail label="Landing" data={`${props.arrival.port}, ${props.arrival.planet}`} textAlign="right"/>
-      {/* <Barcode value={props._id} displayValue='false' background='#0e1114' lineColor='#ffffff' height='40' width='1'/> */}
       <FlightDetail label="Terminal" data={props.departure.terminal}/>
       <FlightDetail label="Price" data="..." textAlign="center" />
       <button className="book-now">Book This Flight</button> 
