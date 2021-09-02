@@ -23,7 +23,7 @@ const Tickets = () => {
         {
           tickets && tickets.length > 0
             ? tickets.map((ticket) => (
-              <Ticket {...ticket} key={ticket._id}/>
+              <Ticket {...ticket} key={ticket._id} tickets={tickets} setTickets={setTickets}/>
             ))
             : (<h2>No tickets yet.</h2>)
         }

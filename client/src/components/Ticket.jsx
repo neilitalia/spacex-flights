@@ -1,10 +1,11 @@
-import axios from 'axios'
 import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 import { API_BASE_URI } from '../globals'
 import CancelConfirmation from './CancelConfirmation'
 import './Ticket.css'
 
 const Ticket = (props) => {
+
   const [passenger, setPassenger] = useState('')
   const [flight, setFlight] = useState('')
   const [cancelAttempt, setCancelAttempt] = useState(false)
@@ -20,10 +21,11 @@ const Ticket = (props) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
   
+  
+
   const cancelFlight = async () => {
     const result = await axios.delete(`${API_BASE_URI}/tickets/delete`,
       { data: {id: props._id}})
-    console.log(result)
   }
 
   const handleCancellation = () => {

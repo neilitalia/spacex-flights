@@ -36,9 +36,18 @@ p.planet {
   border: 3px solid #ffffff;
   border-radius: 10px;
   background: rgba(0, 0, 0, 0);
-  color: #ffffff;
   text-transform: uppercase;
   font-size: 22px;
+}
+
+.EarliestFlight > button > a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.EarliestFlight > button:hover > a {
+  color: #000000;
+  font-weight: 600;
 }
 
 div.details-row-1 {
@@ -145,13 +154,4 @@ img.planet-image {
   animation-duration: 50000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }

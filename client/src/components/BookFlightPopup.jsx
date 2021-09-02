@@ -9,7 +9,7 @@ const BookFlightPopup = () => {
       <button>
         <NavLink to="/tickets">
           View Cart
-          </NavLink>
+        </NavLink>
       </button>
     </div>
   )

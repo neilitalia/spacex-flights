@@ -1,8 +1,28 @@
+import React from 'react'
+import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 import FlightDetail from './FlightDetail'
 import './EarliestFlight.css'
 import CheckMark from '../icons/CheckMark.jsx'
+import {API_BASE_URI} from '../globals'
 
 const EarliestFlight = (props) => {
+  let history = useHistory()
+
+  const bookFlight = async () => {
+    const payload = {
+      "class": "economy",
+      "segment": "12",
+      "price": 2400000,
+      "flight": "612d489c8eb9022b1b736dc3",
+      "passenger": "612ecaa27f4f4e837f4ae17a"
+    }
+    const response = await axios.post(`${API_BASE_URI}/tickets/add`, payload)
+    if(response.status === 201){
+      history.push('/tickets')
+    }
+  }
+
   return (
     <div className="EarliestFlight" ref={props.endOfPage}>
       <div className="destination">
@@ -10,7 +30,9 @@ const EarliestFlight = (props) => {
         <p className="region">Arabia Quadrangle,</p>
         <p className="planet">Mars</p>
       </div>
-      <button className="book-now">Book Now</button>
+      <button className="book-now" onClick={bookFlight}>
+        Book Now
+      </button>
       <div className="detail-1">
         <FlightDetail label="Departure" data="Sep 04, 2021" textAlign="left"/>
       </div>

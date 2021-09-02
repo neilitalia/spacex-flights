@@ -49,7 +49,6 @@ const FlightDetailsCard = (props) => {
     if(bookResponse.status === 201){
       setBookSuccess(true)
     }
-    
   }
 
   const formatPrice = (duration) => {

@@ -10,7 +10,7 @@ const Flights = () => {
   const [destination, setDestination] = useState('')
   const [flights, setFlights] = useState(null)
   const [flightWays, setFlightWays] = useState('one-way')
-  const [flightClass, setFlightClass] = useState('first-class')
+  const [flightClass, setFlightClass] = useState('first')
   const [searched, toggleSearched] = useState(false)
 
   const findFlightByOrigin = async () => {
@@ -91,7 +91,7 @@ const Flights = () => {
       {
         searched
           ? (flights.map((flight)=>(
-              <FlightDetailsCard {...flight} key={flight._id} flightWays={flightWays} flightClass={flightClass}/>
+              <FlightDetailsCard {...flight} key={flight._id} flightClass={flightClass}/>
           )))
           : (<h2>Enter origin or destination</h2>)
       }
