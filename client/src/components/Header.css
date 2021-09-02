@@ -20,7 +20,8 @@
   grid-row: 3/4;
 }
 
-.Header > button {
+.Header > button,
+.Header > a {
   background-color: rgba(0, 0, 0, 0);
   color: #ffffff;
   border: 3px solid #ffffff;
@@ -34,7 +35,19 @@
   grid-row: 5/6;
 }
 
-.Header > button.all-flights {
+.Header > a {
   grid-column: 6/9;
   grid-row: 5/6;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.Header > a:hover {
+  color: #000000;
+  background-color: #ffffff;
+  font-weight: 600;
 }

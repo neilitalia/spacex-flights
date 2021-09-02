@@ -1,6 +1,6 @@
 .App {
-  /* background: linear-gradient(180deg, rgba(14, 17, 20, 0) 0%, #0e1114 100%),
-    url('https://cdn.pixabay.com/photo/2016/01/19/17/29/earth-1149733_960_720.jpg');
-  background-size: cover;
-  background-repeat: no-repeat; */
+  background: url('./images/earth-background.png');
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
 }
