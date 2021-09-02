@@ -1,11 +1,10 @@
-import React from 'react'
 import FlightDetail from './FlightDetail'
 import './EarliestFlight.css'
 import CheckMark from '../icons/CheckMark.jsx'
 
-const EarliestFlight = () => {
+const EarliestFlight = (props) => {
   return (
-    <div className="EarliestFlight">
+    <div className="EarliestFlight" ref={props.endOfPage}>
       <div className="destination">
         <h2 className="city">Cassini,</h2>
         <p className="region">Arabia Quadrangle,</p>
@@ -13,13 +12,13 @@ const EarliestFlight = () => {
       </div>
       <button className="book-now">Book Now</button>
       <div className="detail-1">
-        <FlightDetail label="Departure" data="Sept 5, 2021" textAlign="left"/>
+        <FlightDetail label="Departure" data="Sep 04, 2021" textAlign="left"/>
       </div>
       <div className="detail-2">
         <FlightDetail label="Duration" data="9 months" textAlign="center"/>
       </div>
       <div className="detail-3">
-        <FlightDetail label="Arrival" data="June 5, 2022"  textAlign="right"/>
+        <FlightDetail label="Arrival" data="Jun 04, 2022"  textAlign="right"/>
       </div>
       <div className="detail-4">
         <FlightDetail label="Launchpad" data="Houston" textAlign="left"/>
