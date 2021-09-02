@@ -1,0 +1,19 @@
+.BookFlightPopup {
+  position: absolute;
+  right: -200px;
+  bottom: 30px;
+  animation: fadeIn 0.7s ease;
+}
+
+.BookFlightPopup > button {
+  border: none;
+  border-bottom: 3px solid #ffffff;
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.BookFlightPopup > button > a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}

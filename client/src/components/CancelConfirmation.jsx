@@ -1,7 +1,7 @@
 import React from 'react'
-import './Confirmation.css'
+import './CancelConfirmation.css'
 
-const Confirmation = (props) => {
+const CancelConfirmation = (props) => {
   return (
     <div className="Confirmation">
       <h2>Are you sure you want to cancel this flight?</h2>
@@ -11,4 +11,4 @@ const Confirmation = (props) => {
   )
 }
 
-export default Confirmation
+export default CancelConfirmation

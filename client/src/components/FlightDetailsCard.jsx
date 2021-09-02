@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import './FlightDetailsCard.css'
 import FlightDetail from './FlightDetail'
 import { API_BASE_URI } from '../globals'
+import BookFlightPopup from './BookFlightPopup'
 
 const FlightDetailsCard = (props) => {
+
+  const [bookSuccess, setBookSuccess] = useState(false)
 
   const convertDateToString = (date) => {
     const D = new Date(date)
@@ -42,10 +45,12 @@ const FlightDetailsCard = (props) => {
       "flight": props._id,
       "passenger": "612ecaa27f4f4e837f4ae17a"
     }
-    console.log('payload :>> ', payload);
-    await axios.post(`${API_BASE_URI}/tickets/add`, payload)
+    const bookResponse = await axios.post(`${API_BASE_URI}/tickets/add`, payload)
+    if(bookResponse.status === 201){
+      setBookSuccess(true)
+    }
+    
   }
-  
 
   const formatPrice = (duration) => {
     const price = calculatePrice(duration) / 1000000
@@ -66,7 +71,8 @@ const FlightDetailsCard = (props) => {
       <FlightDetail label="Landing" data={`${props.arrival.port}, ${props.arrival.planet}`} textAlign="right"/>
       <FlightDetail label="Terminal" data={props.departure.terminal}/>
       <FlightDetail label="Price" data={formatPrice(duration)} textAlign="center" />
-      <button className="book-now" onClick={bookFlight}>Book This Flight</button> 
+      <button className="book-now" onClick={bookFlight}>Book This Flight</button>
+      {bookSuccess && <BookFlightPopup />}
     </div>
   )
 }

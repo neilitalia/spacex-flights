@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, {useState, useEffect} from 'react'
 import { API_BASE_URI } from '../globals'
-import Confirmation from './Confirmation'
+import CancelConfirmation from './CancelConfirmation'
 import './Ticket.css'
 
 const Ticket = (props) => {
@@ -93,7 +93,7 @@ const Ticket = (props) => {
       <div className="cancel-confirmation">
         {
           cancelAttempt
-          ? <Confirmation setCancelAttempt={setCancelAttempt} setConfirmCancel={setConfirmCancel}/>
+          ? <CancelConfirmation setCancelAttempt={setCancelAttempt} setConfirmCancel={setConfirmCancel}/>
           : <div></div>
         }
       </div>
