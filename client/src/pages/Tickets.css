@@ -3,6 +3,7 @@
   grid-gap: 20px;
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: repeat(9, 80px);
+  animation: fadeIn 0.7s ease-in-out;
 }
 
 .Tickets > h1 {

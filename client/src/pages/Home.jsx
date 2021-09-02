@@ -1,4 +1,5 @@
 import React, {useRef} from 'react'
+import './Home.css'
 import EarliestFlight from '../components/EarliestFlight'
 import Header from '../components/Header'
 
@@ -11,7 +12,7 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <div className="Home">
       <Header scrollToEnd={scrollToEnd}/>
       <EarliestFlight endOfPage={endOfPage} />
     </div>

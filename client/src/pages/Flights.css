@@ -3,6 +3,7 @@
   grid-gap: 20px;
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: repeat(9, 80px);
+  animation: fadeIn 0.7s ease-in-out;
 }
 
 .Flights > h1 {
@@ -24,7 +25,7 @@
 }
 
 .Flights > input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .Flights > input:focus {
@@ -52,6 +53,18 @@ button.search-button {
   align-items: center;
   justify-content: center;
   letter-spacing: 3px;
+  transition: 0.2s ease;
+}
+
+button.search-button:hover {
+  background: #ffffff;
+  color: #000000;
+  font-weight: 600;
+  fill: #000000;
+}
+
+button.search-button:hover > svg {
+  fill: #000000;
 }
 
 button.search-button > svg {
