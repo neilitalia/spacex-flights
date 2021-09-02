@@ -12,19 +12,19 @@ const Flights = () => {
   const [searched, toggleSearched] = useState(false)
 
   const findFlightByOrigin = async () => {
-    const flights = await axios.get(`${API_BASE_URI}/flights/findByOrigin`,{ origin: origin })
+    const flights = await axios.post(`${API_BASE_URI}/flights/findByOrigin`,{ origin: origin })
     setFlights(flights.data.results)
     toggleSearched(true)
   }
 
   const findFlightByDestination = async () => {
-    const flights = await axios.get(`${API_BASE_URI}/flights/findByDestination`,{ destination: destination })
+    const flights = await axios.post(`${API_BASE_URI}/flights/findByDestination`,{ destination: destination })
     setFlights(flights.data.results)
     toggleSearched(true)
   }
 
   const findFlightByOriginAndDestination = async () => {
-    const flights = await axios.get(`${API_BASE_URI}/flights/findByOriginAndDestination`,
+    const flights = await axios.post(`${API_BASE_URI}/flights/findByOriginAndDestination`,
     { origin: origin,
       destination: destination
     })
