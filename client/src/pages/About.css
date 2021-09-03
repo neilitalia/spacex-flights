@@ -1,3 +1,52 @@
 .About {
-  animation: fadeIn 0.7s ease-in-out;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: 20vh 100px 100px 100px 100px 100px 100px 20vh;
+}
+
+.About > h1 {
+  margin: 0;
+  font-size: 64px;
+  font-weight: 600;
+  grid-area: 2/2/3/10;
+}
+
+.About > p {
+  margin: 0;
+  font-size: 24px;
+  grid-area: 3/2/4/10;
+}
+
+.About > h2 {
+  margin: 0;
+  font-size: 42px;
+  font-weight: 600;
+}
+
+.About > ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+.About > ul > li > a {
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.About > h2.credits-header {
+  grid-area: 5/2/6/10;
+}
+
+.About > ul.credits-list {
+  grid-area: 6/2/8/5;
+}
+
+.About > h2.connect-header {
+  grid-area: 5/6/8/9;
+}
+
+.About > ul.connect-list {
+  grid-area: 6/6/8/9;
 }
