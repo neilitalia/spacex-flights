@@ -7,6 +7,13 @@ import Ticket from '../components/Ticket'
 const Tickets = () => {
 
   const [tickets, setTickets] = useState(null)
+  const [forceUpdate, setForceUpdate] = useState(false)
+
+  const handleForceUpdate = () => {
+    forceUpdate
+    ? setForceUpdate(false)
+    : setForceUpdate(true)
+  }
 
   useEffect(() => {
     const getAllTickets = async () => {
@@ -23,7 +30,7 @@ const Tickets = () => {
         {
           tickets && tickets.length > 0
             ? tickets.map((ticket) => (
-              <Ticket {...ticket} key={ticket._id} tickets={tickets} setTickets={setTickets}/>
+              <Ticket {...ticket} key={ticket._id} tickets={tickets} setTickets={setTickets} setForceUpdate={handleForceUpdate}/>
             ))
             : (<h2>No tickets yet.</h2>)
         }

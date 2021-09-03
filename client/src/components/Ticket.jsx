@@ -9,7 +9,7 @@ const Ticket = (props) => {
   const [passenger, setPassenger] = useState('')
   const [flight, setFlight] = useState('')
   const [cancelAttempt, setCancelAttempt] = useState(false)
-  const [confirmCancel, setConfirmCancel] = useState(false)
+  const [cancelConfirm, setCancelConfirm] = useState(false)
 
   const convertDateToString = (date) => {
     const D = new Date(date)
@@ -21,11 +21,21 @@ const Ticket = (props) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
   
-  
+  const removeTicket = (id) => {
+    let tickets = props.tickets
+    const cancelledTicket = tickets.find(item => item._id === id)
+    const cancelledTicketIndex = tickets.indexOf(cancelledTicket)
+    tickets.splice(cancelledTicketIndex, 1)
+    props.setTickets(tickets)
+    props.setForceUpdate(true)
+  }
 
-  const cancelFlight = async () => {
+  const cancelTicket = async () => {
     const result = await axios.delete(`${API_BASE_URI}/tickets/delete`,
       { data: {id: props._id}})
+    if(result.status === 200){
+      removeTicket(props._id)
+    }
   }
 
   const handleCancellation = () => {
@@ -48,10 +58,12 @@ const Ticket = (props) => {
   }, [props.passenger, props.flight])
 
   useEffect(() => {
-    if(cancelAttempt && confirmCancel){
-      cancelFlight()
+    if(cancelAttempt && cancelConfirm){
+      cancelTicket()
+      setCancelAttempt(false)
+      setCancelConfirm(false)
     }
-  }, [cancelAttempt, confirmCancel])
+  }, [cancelAttempt, cancelConfirm])
 
   return (
     <div>
@@ -95,7 +107,7 @@ const Ticket = (props) => {
       <div className="cancel-confirmation">
         {
           cancelAttempt
-          ? <CancelConfirmation setCancelAttempt={setCancelAttempt} setConfirmCancel={setConfirmCancel}/>
+          ? <CancelConfirmation setCancelAttempt={setCancelAttempt} setConfirmCancel={setCancelConfirm}/>
           : <div></div>
         }
       </div>
