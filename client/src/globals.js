@@ -1,4 +1,7 @@
-export const API_BASE_URI = 'http://localhost:3001/api'
+export const BASE_URL =
+  process.env.NODE_ENV === 'production'
+    ? `${window.location.origin}/api`
+    : 'http://localhost:3001/api'
 
 export const convertDateToString = (date) => {
   const D = new Date(date)
