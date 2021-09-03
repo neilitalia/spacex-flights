@@ -1,4 +1,4 @@
-export const API_BASE_URL =
+export const API_BASE_URI =
   process.env.NODE_ENV === 'production'
     ? `${window.location.origin}/api`
     : 'http://localhost:3001/api'
