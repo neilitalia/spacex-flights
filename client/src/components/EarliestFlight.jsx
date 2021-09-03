@@ -14,7 +14,7 @@ const EarliestFlight = (props) => {
       "class": "economy",
       "segment": "12",
       "price": 2400000,
-      "flight": "612d489c8eb9022b1b736dc3",
+      "flight": "6132319bbdf5e7b7db755d1b",
       "passenger": "612ecaa27f4f4e837f4ae17a"
     }
     const response = await axios.post(`${API_BASE_URI}/tickets/add`, payload)
@@ -43,7 +43,7 @@ const EarliestFlight = (props) => {
         <FlightDetail label="Arrival" data="Jun 04, 2022"  textAlign="right"/>
       </div>
       <div className="detail-4">
-        <FlightDetail label="Launchpad" data="Houston" textAlign="left"/>
+        <FlightDetail label="Launchpad" data="Florida" textAlign="left"/>
       </div>
       <div className="detail-5">
         <FlightDetail label="Ride" data="FALCON HEAVY" textAlign="center"/>
