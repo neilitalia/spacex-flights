@@ -1,6 +1,6 @@
 import React from 'react'
 import './BookFlightPopup.css'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const BookFlightPopup = () => {
   return (

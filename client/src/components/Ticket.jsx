@@ -3,6 +3,7 @@ import axios from 'axios'
 import { API_BASE_URI } from '../globals'
 import CancelConfirmation from './CancelConfirmation'
 import './Ticket.css'
+import { convertDateToString, capitalizeFirstLetter } from '../globals'
 
 const Ticket = (props) => {
 
@@ -10,33 +11,6 @@ const Ticket = (props) => {
   const [flight, setFlight] = useState('')
   const [cancelAttempt, setCancelAttempt] = useState(false)
   const [cancelConfirm, setCancelConfirm] = useState(false)
-
-  const convertDateToString = (date) => {
-    const D = new Date(date)
-    const dateString = D.toDateString().substring(4)
-    return dateString
-  }
-
-  const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-  
-  const removeTicket = (id) => {
-    let tickets = props.tickets
-    const cancelledTicket = tickets.find(item => item._id === id)
-    const cancelledTicketIndex = tickets.indexOf(cancelledTicket)
-    tickets.splice(cancelledTicketIndex, 1)
-    props.setTickets(tickets)
-    props.setForceUpdate(true)
-  }
-
-  const cancelTicket = async () => {
-    const result = await axios.delete(`${API_BASE_URI}/tickets/delete`,
-      { data: {id: props._id}})
-    if(result.status === 200){
-      removeTicket(props._id)
-    }
-  }
 
   const handleCancellation = () => {
     cancelAttempt
@@ -49,21 +23,40 @@ const Ticket = (props) => {
       const result = await axios.get(`${API_BASE_URI}/passengers/findById/${props.passenger}`)
       setPassenger(result.data.passenger)
     }
+
     const getFlight = async () => {
       const result = await axios.get(`${API_BASE_URI}/flights/findById/${props.flight}`)
       setFlight(result.data.flight)
     }
+
     getPassenger()
     getFlight()
   }, [props.passenger, props.flight])
 
   useEffect(() => {
+    const removeTicket = (id) => {
+      let tickets = props.tickets
+      const cancelledTicket = tickets.find(item => item._id === id)
+      const cancelledTicketIndex = tickets.indexOf(cancelledTicket)
+      tickets.splice(cancelledTicketIndex, 1)
+      props.setTickets(tickets)
+      props.setForceUpdate()
+    }
+
+    const cancelTicket = async () => {
+      const result = await axios.delete(`${API_BASE_URI}/tickets/delete`,
+        { data: {id: props._id}})
+      if(result.status === 200){
+        removeTicket(props._id)
+      }
+    }
+
     if(cancelAttempt && cancelConfirm){
       cancelTicket()
       setCancelAttempt(false)
       setCancelConfirm(false)
     }
-  }, [cancelAttempt, cancelConfirm])
+  }, [cancelAttempt, cancelConfirm, props])
 
   return (
     <div>

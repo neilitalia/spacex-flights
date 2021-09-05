@@ -91,7 +91,7 @@ const Flights = () => {
       {
         searched
           ? (flights.map((flight)=>(
-              <FlightDetailsCard {...flight} key={flight._id} flightClass={flightClass}/>
+              <FlightDetailsCard {...flight} key={flight._id} flightClass={flightClass} flightWays={flightWays}/>
           )))
           : (<h2>Enter origin or destination</h2>)
       }

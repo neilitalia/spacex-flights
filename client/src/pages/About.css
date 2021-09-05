@@ -3,6 +3,7 @@
   grid-gap: 20px;
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: 20vh 100px 100px 100px 100px 100px 100px 20vh;
+  animation: fadeIn 0.7s ease-in-out;
 }
 
 .About > h1 {
