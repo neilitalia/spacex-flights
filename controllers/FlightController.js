@@ -1,9 +1,5 @@
 const { Flight } = require('../models')
 
-const getHealth = async (req, res) => {
-  return res.status(200).send({ msg: 'Success' })
-}
-
 const getAll = async (req, res) => {
   try {
     const results = await Flight.find()
@@ -93,7 +89,6 @@ const findById = async (req, res) => {
 }
 
 module.exports = {
-  getHealth,
   getAll,
   addFlight,
   deleteFlight,
