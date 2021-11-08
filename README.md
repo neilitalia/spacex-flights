@@ -4,7 +4,7 @@
 
 ### By: Neil Italia
 
-[LinkedIn](https://www.linkedin.com/in/neilitalia/) | [Live Demo](https://salty-wave-69241.herokuapp.com/) | [Trello](https://trello.com/b/PpDimXDN/spacex-travel) | [Figma](https://www.figma.com/file/9u9aqKT6i6Bz7OP1sRtygI/SpaceX-Flights?node-id=0%3A1)
+[LinkedIn](https://www.linkedin.com/in/neilitalia/) | [Live Demo](https://bit.ly/spacex-flights-app) | [Trello](https://trello.com/b/PpDimXDN/spacex-travel) | [Figma](https://www.figma.com/file/9u9aqKT6i6Bz7OP1sRtygI/SpaceX-Flights?node-id=0%3A1)
 ***
 
 ### Project Description
