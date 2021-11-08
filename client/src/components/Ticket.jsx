@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { API_BASE_URI } from '../globals'
 import CancelConfirmation from './CancelConfirmation'
@@ -45,28 +45,34 @@ const Ticket = (props) => {
 
     const cancelTicket = async () => {
       const result = await axios.delete(`${API_BASE_URI}/tickets/delete`,
-        { data: {id: props._id}})
-      if(result.status === 200){
+        { data: { id: props._id } })
+      if (result.status === 200) {
         removeTicket(props._id)
       }
     }
 
-    if(cancelAttempt && cancelConfirm){
+    if (cancelAttempt && cancelConfirm) {
       cancelTicket()
       setCancelAttempt(false)
       setCancelConfirm(false)
     }
   }, [cancelAttempt, cancelConfirm, props])
 
+  const qrInfo = {
+    ticket: props._id,
+    passenger: props.passenger,
+    flight: props.flight
+  }
+
   return (
     <div>
       <article className="Ticket">
         <div className="qr-code">
-          <img src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${JSON.stringify(props)}`} alt="" />
+          <img src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${JSON.stringify(qrInfo)}`} alt="" />
         </div>
         {
           passenger && flight
-          ? (<div className="ticket-details-container">
+            ? (<div className="ticket-details-container">
               <h1>{passenger.name}</h1>
               <div className="ticket-details">
                 <div className="text-align-left">
@@ -89,7 +95,7 @@ const Ticket = (props) => {
                 </div>
               </div>
             </div>)
-          : (<p>No data found</p>)
+            : (<p>No data found</p>)
         }
       </article>
       <div className="ticket-footer">
@@ -100,8 +106,8 @@ const Ticket = (props) => {
       <div className="cancel-confirmation">
         {
           cancelAttempt
-          ? <CancelConfirmation setCancelAttempt={setCancelAttempt} setConfirmCancel={setCancelConfirm}/>
-          : <div></div>
+            ? <CancelConfirmation setCancelAttempt={setCancelAttempt} setConfirmCancel={setCancelConfirm} />
+            : <div></div>
         }
       </div>
     </div>
